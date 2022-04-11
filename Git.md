@@ -58,10 +58,51 @@ git merge branch-1
 
 ## Setup Remote
 
-git remote add upstream git@github.factset.com:cmt/WorkflowManagerApi.git  
-git remote add origin git@github.factset.com:yourUserName/WorkflowManagerApi.git  
+git remote add upstream git@github.url.com  
+git remote add origin git@github.url.com
 
 ### Origin vs Upstream
 
 `upstream` generally refers to the original repo that you have forked
 `origin` is your fork: your own repo on GitHub, clone of the original repo of GitHub
+
+
+## File Changes
+
+**Discard the changes to a file:**
+git checkout -- filename  
+
+**Wipe out all local changes, and be exactly the same as origin:**
+git fetch origin  
+git reset --hard origin/< branch >   
+
+
+### Revert Changes
+
+**1. For general roll-back actions regardless of branches**
+
+Track all the commands (across all branches) you have done locally:  
+git reflog
+
+This will go back to the status before this command and delete the changes:   
+git reset --hard HEAD@{2}
+
+Undo a specific commit and unstage the changes (if {2} is the commit you wanna undo, then should be {3} here):  
+git reset --soft HEAD@{3}  
+
+**2. For a specific branch to roll back or revert certain changes**
+
+Check the commit logs for this specific branch you are in right now:  
+git log
+	
+Revert back the changes you made for this branch, make it soft if you want to retain the changes:  
+git reset --soft < commit-number >  
+or git reset --hard commit-number  
+	
+**3. Follow-up action: move the changes to another branch**
+
+- Make sure you use soft reset instead of hard
+- "git stash" the changes
+- Checkout to another branch
+
+"git stash apply" and the changes will move to this new branch
