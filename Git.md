@@ -56,3 +56,12 @@ git merge branch-1
  git add .  
  git commit -m 'feat(title): summary'  
 
+## Setup Remote
+
+git remote add upstream git@github.factset.com:cmt/WorkflowManagerApi.git  
+git remote add origin git@github.factset.com:yourUserName/WorkflowManagerApi.git  
+
+### Origin vs Upstream
+
+`upstream` generally refers to the original repo that you have forked
+`origin` is your fork: your own repo on GitHub, clone of the original repo of GitHub
