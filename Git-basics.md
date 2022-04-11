@@ -69,10 +69,10 @@ git remote add origin git@github.url.com
 
 ## File Changes
 
-**Discard the changes to a file:**  
+- **Discard the changes to a file:**  
 git checkout -- filename  
 
-**Wipe out all local changes, and be exactly the same as origin:**  
+- **Wipe out all local changes, and be exactly the same as origin:**  
 git fetch origin  
 git reset --hard origin/< branch >   
 
