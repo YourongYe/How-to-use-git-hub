@@ -2,7 +2,7 @@
 
 ## Basic Commands
 
-**- Clone a repo from github**  
+- Clone a repo from github  
 git clone < url copied from github repo >
 
 **2. Checkout to a branch**  
